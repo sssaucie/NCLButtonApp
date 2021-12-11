@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">NCLButtonApp</string>
+    <string name="button_sky">SKY</string>
+    <string name="button_bliss">BLISS</string>
+    <string name="button_escape">ESCAPE</string>
+</resources>

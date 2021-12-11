@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.nclbuttonapp.view_model.LandingPageViewModel" />
+        <variable
+            name="selectedShip"
+            type="com.example.nclbuttonapp.model.entity.ShipEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/landing_page_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.nclbuttonapp.MainActivity">
+
+        <Button
+            android:id="@+id/button_landing_page_sky"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_margin"
+            android:layout_marginEnd="@dimen/spacing_margin"
+            android:text="@string/button_sky"
+            android:onClick="@{() -> viewModel.fetchSkyDetails()}"
+            app:layout_constraintBottom_toTopOf="@+id/button_landing_page_bliss"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_landing_page_bliss"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_margin"
+            android:layout_marginEnd="@dimen/spacing_margin"
+            android:text="@string/button_bliss"
+            android:onClick="@{() -> viewModel.fetchBlissDetails()}"
+            app:layout_constraintBottom_toTopOf="@+id/button_landing_page_escape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_landing_page_sky" />
+
+        <Button
+            android:id="@+id/button_landing_page_escape"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_margin"
+            android:layout_marginEnd="@dimen/spacing_margin"
+            android:text="@string/button_escape"
+            android:onClick="@{() -> viewModel.fetchEscapeDetails()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_landing_page_bliss" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
